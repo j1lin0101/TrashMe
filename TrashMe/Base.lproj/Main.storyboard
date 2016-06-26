@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0WU-Io-q1U">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Trashed Items-->
+        <scene sceneID="OQR-58-gBb">
+            <objects>
+                <tableViewController id="Pog-w7-kZf" customClass="TrashTableViewController" customModule="TrashMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="JyT-aK-OD0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="trashTableViewCell" id="Sxs-OY-Wb3" customClass="TrashTableViewCell" customModule="TrashMe" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Sxs-OY-Wb3" id="5dy-ys-diJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qGS-F1-vWI">
+                                            <rect key="frame" x="46" y="0.0" width="170" height="21"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWy-oL-bZN">
+                                                    <rect key="frame" x="0.0" y="0.0" width="85" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="85" id="UJL-E0-69E"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <color key="textColor" red="0.2552253192062946" green="0.71460021486492153" blue="0.2601266279146342" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2R-Mv-aOM">
+                                                    <rect key="frame" x="85" y="0.0" width="85" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="85" id="afq-p0-fgi"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time Added" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crP-7I-mVd">
+                                            <rect key="frame" x="46" y="22" width="98" height="21"/>
+                                            <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                                            <color key="textColor" red="0.65091214005235609" green="0.65091214005235609" blue="0.65091214005235609" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="trashName" destination="JWy-oL-bZN" id="BQ6-vJ-208"/>
+                                    <outlet property="trashTimeAdded" destination="crP-7I-mVd" id="Cba-Nb-9jx"/>
+                                    <outlet property="trashType" destination="F2R-Mv-aOM" id="ki5-Cc-guj"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Pog-w7-kZf" id="D17-vp-ve0"/>
+                            <outlet property="delegate" destination="Pog-w7-kZf" id="pYt-UP-3hq"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Trashed Items" id="iik-ZD-R1n">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="dgm-i8-iqL">
+                            <connections>
+                                <segue destination="jS6-47-F7J" kind="unwind" identifier="backToMain" unwindAction="unwindForSegue:towardsViewController:" id="sJb-5n-V4e"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g2u-Rd-htE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="jS6-47-F7J" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1861" y="399"/>
+        </scene>
+        <!--TrashMe-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainScreenViewController" customModule="TrashMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="I1w-B4-2LI" userLabel="Super Stack View">
+                                <rect key="frame" x="50" y="128" width="500" height="118"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ufp-Mk-zcs">
+                                        <rect key="frame" x="0.0" y="0.0" width="500" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trash Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0j-iy-Wmx">
+                                                <rect key="frame" x="0.0" y="0.0" width="415" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gjq-kB-s7z">
+                                                <rect key="frame" x="415" y="0.0" width="85" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="85" id="NcU-ou-8dW"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yuj-g7-Rbg">
+                                        <rect key="frame" x="0.0" y="45" width="500" height="28"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SJb-ZW-0uC">
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="28"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vcx-tk-Sbl">
+                                                <rect key="frame" x="300" y="0.0" width="200" height="29"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="OF0-QZ-5fc"/>
+                                                </constraints>
+                                                <segments>
+                                                    <segment title="Recycle"/>
+                                                    <segment title="Compost"/>
+                                                    <segment title="Landfill"/>
+                                                </segments>
+                                            </segmentedControl>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdM-LZ-ttk">
+                                        <rect key="frame" x="230" y="88" width="41" height="30"/>
+                                        <state key="normal" title="Dump"/>
+                                        <connections>
+                                            <action selector="dumpTrash:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O7r-U3-xWN"/>
+                                            <segue destination="Pog-w7-kZf" kind="show" identifier="dumpButton" id="TAD-ZW-56q"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ufp-Mk-zcs" firstAttribute="leading" secondItem="I1w-B4-2LI" secondAttribute="leading" id="9Rc-J2-xKd"/>
+                                    <constraint firstItem="yuj-g7-Rbg" firstAttribute="leading" secondItem="I1w-B4-2LI" secondAttribute="leading" id="9hK-KC-Glf"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="I1w-B4-2LI" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="108" id="OD8-fA-DeD"/>
+                            <constraint firstItem="I1w-B4-2LI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="50" id="eYt-fG-saR"/>
+                            <constraint firstAttribute="trailing" secondItem="I1w-B4-2LI" secondAttribute="trailing" constant="50" id="goC-Zq-zs8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="TrashMe" id="FbW-hZ-TI7">
+                        <barButtonItem key="rightBarButtonItem" title="Old Trash" id="syA-Ym-tvW">
+                            <connections>
+                                <segue destination="Pog-w7-kZf" kind="show" identifier="displayTrash" id="cSB-lx-6jw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="TrashNameField" destination="Gjq-kB-s7z" id="Ubf-mb-GDr"/>
+                        <outlet property="TrashTypeSelector" destination="vcx-tk-Sbl" id="ftR-Nx-CgR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1137" y="399"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="on1-fQ-UdW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0WU-Io-q1U" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uKe-yR-nPr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="9XT-BG-cPg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jNg-iM-5m6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="241" y="399"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="TAD-ZW-56q"/>
+    </inferredMetricsTieBreakers>
+</document>
