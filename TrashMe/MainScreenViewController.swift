@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class MainScreenViewController: UIViewController {
     @IBOutlet weak var TrashNameField: UITextField!
@@ -24,33 +25,25 @@ class MainScreenViewController: UIViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let trashTableViewController = segue.destinationViewController as! TrashTableViewController
-        if let identifier = segue.identifier {
-            if identifier == "displayTrash" {
-                print("Trash Displayed")
-            }
-            else if identifier == "dumpButton" {
+        if segue.identifier == "dumpButton"{
                 if let trashItem = trashItem{
                     trashItem.name = TrashNameField.text ?? ""
                     trashItem.type = TrashTypeSelector.selectedSegmentIndex
-                    trashTableViewController.tableView.reloadData()
+                    RealmHelper.addTrash(trashItem)
                 }
                 else {
                     let newTrashItem = TrashItem()
                     newTrashItem.name = TrashNameField.text ?? ""
                     newTrashItem.type = TrashTypeSelector.selectedSegmentIndex
                     newTrashItem.timeAdded = String(NSDate())
-                    trashTableViewController.trashCan.append(newTrashItem)
+                    RealmHelper.addTrash(newTrashItem)
                 }
+            trashTableViewController.trashCan = RealmHelper.retrieveTrash()
             }
         }
-    }
-
-    @IBAction func dumpTrash(sender: UIButton) {
-        print("Dumped")
-    }
 
     override func viewWillAppear(animated: Bool) {
-        super.viewDidLoad()
+        super.viewWillAppear(animated)
         if let trashItem = trashItem {
             TrashNameField.text = trashItem.name
             TrashTypeSelector.selectedSegmentIndex = trashItem.type

@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import RealmSwift
 
-class TrashItem {
-    var name = ""
-    var type = 0
-    var timeAdded = ""
+class TrashItem: Object {
+    dynamic var name = ""
+    dynamic var type = 0
+    dynamic var timeAdded = ""
 }

@@ -15,6 +15,7 @@
 		3F8B9D561D2076E800B1F347 /* TrashTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8B9D551D2076E800B1F347 /* TrashTableViewController.swift */; };
 		3F8B9D581D207B8700B1F347 /* TrashItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8B9D571D207B8700B1F347 /* TrashItem.swift */; };
 		3F8B9D5A1D207E8700B1F347 /* TrashTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8B9D591D207E8700B1F347 /* TrashTableViewCell.swift */; };
+		3F8B9D5C1D20C90600B1F347 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8B9D5B1D20C90600B1F347 /* RealmHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		3F8B9D551D2076E800B1F347 /* TrashTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrashTableViewController.swift; sourceTree = "<group>"; };
 		3F8B9D571D207B8700B1F347 /* TrashItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrashItem.swift; sourceTree = "<group>"; };
 		3F8B9D591D207E8700B1F347 /* TrashTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrashTableViewCell.swift; sourceTree = "<group>"; };
+		3F8B9D5B1D20C90600B1F347 /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				3F8B9D4F1D2074FE00B1F347 /* Info.plist */,
 				3F8B9D471D2074FE00B1F347 /* Main.storyboard */,
 				3F8B9D451D2074FE00B1F347 /* MainScreenViewController.swift */,
+				3F8B9D5B1D20C90600B1F347 /* RealmHelper.swift */,
 				3F8B9D551D2076E800B1F347 /* TrashTableViewController.swift */,
 				3F8B9D571D207B8700B1F347 /* TrashItem.swift */,
 				3F8B9D591D207E8700B1F347 /* TrashTableViewCell.swift */,
@@ -147,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F8B9D461D2074FE00B1F347 /* MainScreenViewController.swift in Sources */,
+				3F8B9D5C1D20C90600B1F347 /* RealmHelper.swift in Sources */,
 				3F8B9D561D2076E800B1F347 /* TrashTableViewController.swift in Sources */,
 				3F8B9D441D2074FE00B1F347 /* AppDelegate.swift in Sources */,
 				3F8B9D581D207B8700B1F347 /* TrashItem.swift in Sources */,

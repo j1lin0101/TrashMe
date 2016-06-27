@@ -137,7 +137,6 @@
                                         <rect key="frame" x="230" y="88" width="41" height="30"/>
                                         <state key="normal" title="Dump"/>
                                         <connections>
-                                            <action selector="dumpTrash:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O7r-U3-xWN"/>
                                             <segue destination="Pog-w7-kZf" kind="show" identifier="dumpButton" id="TAD-ZW-56q"/>
                                         </connections>
                                     </button>

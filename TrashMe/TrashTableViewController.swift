@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import RealmSwift
+
 
 class TrashTableViewController: UITableViewController {
     
-    var trashCan = [TrashItem]() {
+    var trashCan: Results<TrashItem>! {
         didSet {
             tableView.reloadData()
         }
@@ -18,37 +20,17 @@ class TrashTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        trashCan = RealmHelper.retrieveTrash()
     }
 
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return trashCan.count
     }
     
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let identifier = segue.identifier {
-            if identifier == "backToMain" {
-                print("BACKIN UP")
-            }
-            if identifier == "dumpButton" {
-                let indexPath = tableView.indexPathForSelectedRow!
-                let trash = trashCan[indexPath.row]
-                let mainScreenViewController = segue.destinationViewController as! MainScreenViewController
-                mainScreenViewController.trashItem = trash
-            }
-        }
-    }
-    
-    @IBAction override func unwindForSegue(unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
-        //stuff
-    }
-
-    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("trashTableViewCell", forIndexPath: indexPath) as! TrashTableViewCell
-
+        
         let row = indexPath.row
         
         let trashPiece = trashCan[row]
@@ -63,9 +45,29 @@ class TrashTableViewController: UITableViewController {
         } else {
             cell.trashType.text = "Landfill"
         }
-
+        
         return cell
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let identifier = segue.identifier {
+            if identifier == "dumpButton" {
+                let indexPath = tableView.indexPathForSelectedRow!
+                let trash = trashCan[indexPath.row]
+                let mainScreenViewController = segue.destinationViewController as! MainScreenViewController
+                mainScreenViewController.trashItem = trash
+            }
+        }
+    }
+    
+    @IBAction func unwindToListNotesViewController(segue: UIStoryboardSegue) {
+        
+        // for now, simply defining the method is sufficient.
+        // we'll add code later
+        
+    }
+
+    
     
 }
    
